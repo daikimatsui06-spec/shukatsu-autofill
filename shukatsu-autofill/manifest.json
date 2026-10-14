@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "就活マイページ自動入力",
+  "version": "1.4.1",
+  "description": "就活サイトのマイページ登録フォームに、氏名・住所・電話番号・生年月日・大学情報・休暇中連絡先などを自動入力します。",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self'; form-action 'none'"
+  },
+  "action": {
+    "default_title": "就活マイページ自動入力",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "commands": {
+    "fill-form": {
+      "suggested_key": {
+        "default": "Alt+Shift+F"
+      },
+      "description": "このページのフォームに自動入力"
+    }
+  },
+  "host_permissions": [
+    "https://*.i-webs.jp/*",
+    "https://*.snar.jp/*",
+    "https://*.e2r.jp/*",
+    "https://*.axol.jp/*"
+  ]
+}

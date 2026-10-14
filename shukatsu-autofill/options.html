@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>プロフィール設定 - 就活マイページ自動入力</title>
+  <style>
+    body { margin: 0; background: #f5f6f8; font: 14px/1.6 system-ui, "Hiragino Sans", "Yu Gothic UI", sans-serif; color: #222; }
+    main { max-width: 820px; margin: 0 auto; padding: 24px 16px 100px; }
+    h1 { font-size: 20px; margin: 0 0 4px; }
+    .lead { color: #555; margin: 0 0 20px; font-size: 13px; background: #e8f0fe; border-radius: 8px; padding: 10px 14px; }
+    h2 { font-size: 15px; margin: 24px 0 8px; padding-left: 8px; border-left: 4px solid #1a73e8; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #d5d9de; }
+    th { width: 190px; text-align: left; vertical-align: top; background: #eef1f4; padding: 10px 12px; border-bottom: 1px solid #d5d9de; font-weight: 600; font-size: 13px; }
+    td { padding: 8px 12px; border-bottom: 1px solid #d5d9de; }
+    td .note { color: #666; font-size: 12px; margin: 2px 0 4px; }
+    .inline { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+    .inline label { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; }
+    input[type=text], input[type=email], input[type=tel], select {
+      padding: 6px 8px; border: 1px solid #b9bfc6; border-radius: 4px; font: inherit; color: #222; background: #fff; box-sizing: border-box;
+    }
+    input[type=text], input[type=email], input[type=tel] { width: 100%; max-width: 380px; }
+    .inline input[type=text] { width: 150px; }
+    input:focus, select:focus { outline: 2px solid #1a73e8; outline-offset: -1px; }
+    input:disabled, select:disabled { background: #eceff1; color: #999; }
+    .bar { position: fixed; left: 0; right: 0; bottom: 0; background: #fff; border-top: 1px solid #d5d9de; padding: 12px 16px; display: flex; justify-content: center; gap: 12px; align-items: center; }
+    .bar button { padding: 9px 28px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; }
+    #save { background: #1a73e8; color: #fff; }
+    #clear { background: #fff; color: #c5221f; border: 1px solid #e0b4b1 !important; font-weight: 400 !important; }
+    #saved { color: #188038; font-size: 13px; min-width: 7em; }
+    .zipbtn { margin-left: 8px; padding: 6px 12px; border: 1px solid #1a73e8; border-radius: 4px; background: #fff; color: #1a73e8; font: inherit; font-size: 13px; cursor: pointer; }
+    .zipbtn:hover { background: #e8f0fe; }
+    .zipbtn:disabled { border-color: #ccc; color: #aaa; background: #f5f5f5; cursor: default; }
+    @media (max-width: 600px) {
+      th, td { display: block; width: auto; }
+      th { border-bottom: 0; padding-bottom: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>プロフィール設定</h1>
+    <p class="lead">
+      ここで登録した情報は、このパソコンの Chrome の中（この拡張機能専用の保存場所）にだけ保存されます。
+      インターネットへの送信・Google アカウントへの同期は一切行いません。
+    </p>
+    <form id="form"></form>
+  </main>
+  <div class="bar">
+    <button id="clear" type="button">登録内容をすべて削除</button>
+    <button id="save" form="form" type="submit">保存</button>
+    <span id="saved"></span>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 260px; margin: 0; padding: 14px; font: 13px/1.5 system-ui, "Hiragino Sans", "Yu Gothic UI", sans-serif; color: #222; }
+    h1 { font-size: 14px; margin: 0 0 10px; }
+    button { width: 100%; padding: 10px; font-size: 14px; font-weight: 600; border: 0; border-radius: 6px; background: #1a73e8; color: #fff; cursor: pointer; }
+    button:hover { background: #1765cc; }
+    label { display: flex; gap: 6px; align-items: center; margin: 10px 0 4px; }
+    #status { min-height: 1.5em; margin: 8px 0 0; color: #444; }
+    #status.err { color: #c5221f; }
+    a { color: #1a73e8; }
+    .hint { color: #777; font-size: 11px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h1>就活マイページ自動入力</h1>
+  <button id="fill">このページに自動入力</button>
+  <label><input type="checkbox" id="onlyEmpty"> 空欄の項目だけ入力する</label>
+  <label><input type="checkbox" id="continueAcross"> 「次へ」や学校検索のウィンドウでも続けて入力<br>（i-web・snar・e2r・axol、押してから30分間）</label>
+  <p id="status"></p>
+  <a href="#" id="settings">プロフィールを編集</a>
+  <br><a href="#" id="diagnose" style="font-size:12px;color:#777">うまく入らない時：診断情報をコピー</a>
+  <p class="hint">ショートカット: Alt+Shift+F<br>入力後は内容を必ず確認してから送信してください。</p>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
